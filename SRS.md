@@ -49,7 +49,7 @@ The basic functional requirements are:
 |  RF_24   | System shall allow the administrator to update stock | Stock Management |
 |  RF_25   | System shall track information about orders | Delivery&Tracking |
 |  RF_26   | System shall display track information about customer order. | Delivery&Tracking |
-|  RF_27   | System shall allow the dispatch department to update state of order. | Orders |
+|  RF_27   | System shall allow the dispatch department to update state of order. | Delivery&Tracking |
 
 ## Not-Functional Requirements
 
