@@ -65,10 +65,55 @@ The basic not-function requirements are:
 |  NF_3   | System **shall** store sales transaction data. | Availability |
 |  NF_4   | System **could** use a RBAC system. | Security |
 
-## Use Case Diagram
+## Use Case Model
 
-### Manage Account
+### Actors
+
+The table below contains brief semantics for the actors
+
+| Actors | Description |
+| :----- | :---------- |
+| Customer | |
+| User | |
+| Administrator | |
+
+### Use Case Diagram
+
+#### Use Case Diagram 1
 
 ![Use Case Model](./models/usecase_registrationlogin.png)
 
+##### Use Case: Login
+
+**Use Case ID**: UC1
+
+**Actors**: 
+- User
+
+**Preconditions**:
+- User is not logged on to the system.
+
+**Flow of events**:
+- 1 The scenario begins when the User selects “Login”.
+- 2 While the User is not logged on and the number of authentication attempts is less than or equal to three:
+  - 2.1 The system asks the User username and password.
+  - 2.2 The User enters username and password.
+  - 2.3 The username and password are correct.
+- 3 The system authenticates the Customer
+
+**Postconditions**:
+- User is a Customer or an Administrator
+
+**Secondary Scenario**:
+
+- 1 The scenario begins when the Customer selects “Log On”.
+- 2 While the User is not logged on and the number of authentication attempts is less than or equal to three
+  - 2.1 The System asks the User username and password.
+  - 2.2 The User enters username and password.
+  - 2.3 The username and/or password are wrong.
+- 3 The system logs a security violation.
+
+**Postcondition**:
+- User is not logged in
+- System log a security violation
 
