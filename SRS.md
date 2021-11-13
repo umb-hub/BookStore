@@ -85,15 +85,18 @@ The table below contains brief semantics for the actors
 
 ##### Use Case: Login
 
-**Use Case ID**: UC1
+**Use Case ID**: **UC1**
 
 **Actors**: 
+
 - User
 
 **Preconditions**:
+
 - User is not logged on to the system.
 
 **Flow of events**:
+
 - 1 The scenario begins when the User selects “Login”.
 - 2 While the User is not logged on and the number of authentication attempts is less than or equal to three:
   - 2.1 The system asks the User username and password.
@@ -102,6 +105,7 @@ The table below contains brief semantics for the actors
 - 3 The system authenticates the Customer
 
 **Postconditions**:
+
 - User is a Customer or an Administrator
 
 **Secondary Scenario**:
@@ -114,6 +118,7 @@ The table below contains brief semantics for the actors
 - 3 The system logs a security violation.
 
 **Postcondition**:
+
 - User is not logged in
 - System log a security violation
 
