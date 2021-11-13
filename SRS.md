@@ -27,9 +27,8 @@ The basic functional requirements are:
 
 | ID       | Description  | Module  | 
 | -------- |:------------ | :------- | 
-|  RF_1    | System **shall** allow the customer to register. | Registration/Login | 
-|  RF_2    | System **shall** use the customer’s email address as the username for logon purposes. | Registration/Login |
-|  RF_3    | System **shall** require the customer to set multiple authentication factors (password and OTP). | Registration/Login |
+|  RF_1    | System **shall** allow the user to register. | Registration/Login | 
+|  RF_2    | System **shall** allow the user to login as customer. | Registration/Login |
 |  RF_4    | System **shall** shall collect customer information consisting of name, address, email address, phone number, credit card information. | Registration/Login | 
 |  RF_5    | System **shall** allow  the customer to view and edit its customer information. | Registration/Login | 
 |  RF_6    | System **shall** authenticate costumers with password to viewing outstanding orders, viewing customer information and write feedback for a book. | Registration/Login | 
