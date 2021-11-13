@@ -64,3 +64,11 @@ The basic not-function requirements are:
 |  NF_2   | System **shall** collect costumer information in according to GPDR | ComplianceTo-Standards |
 |  NF_3   | System **shall** store sales transaction data. | Availability |
 |  NF_4   | System **could** use a RBAC system. | Security |
+
+## Use Case Diagram
+
+### Manage Account
+
+![Use Case Model](./models/usecase_registrationlogin.png)
+
+
