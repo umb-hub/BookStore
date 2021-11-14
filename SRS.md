@@ -260,7 +260,7 @@ The table below contains brief semantics for the actors
 
 \newpage
 
-#### Use Case: Add Item To Cart
+#### Use Case: Display Cart
 
 **ID**: **UC6**
 
@@ -281,7 +281,33 @@ The table below contains brief semantics for the actors
    - 3.1 The System displays the book detail,  quantity, unit price and total price.
 - extension point: manageCart
 - extension point: checkout
-- 
+
+**Postcondition**:
+
+- 1 None
+
+\newpage
+
+#### Use Case: Manage Cart
+
+**ID**: **UC7**
+
+**Actors**: 
+
+- Customer
+
+**Preconditions**:
+
+- 1 The System is displaying the shopping cart.
+
+**Flow of events**:
+- 1 While the Customer is updating the cart
+  - 1.1 The Customer selects an item in the cart.
+  - 1.2 If the Customer selects “Remove Item”
+    - 1.2.1 The System removes the selected item from the cart.
+  - 1.3 If the Customer enters a new quantity for the selected item
+    - 1.3.1 The System updates the quantity for the selected item.
+
 **Postcondition**:
 
 - 1 None
