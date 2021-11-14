@@ -77,15 +77,13 @@ The table below contains brief semantics for the actors
 | User | |
 | Administrator | |
 
-### Use Case Diagram
-
-#### Use Case Diagram 1
+### Use Case Diagram 1
 
 ![Use Case Model](./models/usecase_registrationlogin.png)
 
-##### Use Case: Login
+#### Use Case: Login
 
-**Use Case ID**: **UC1**
+**ID**: **UC1**
 
 **Actors**: 
 
@@ -99,10 +97,10 @@ The table below contains brief semantics for the actors
 
 - 1 The scenario begins when the User selects “Login”.
 - 2 While the User is not logged on and the number of authentication attempts is less than or equal to three:
-  - 2.1 The system asks the User username and password.
+  - 2.1 The System asks the User username and password.
   - 2.2 The User enters username and password.
   - 2.3 The username and password are correct.
-- 3 The system authenticates the Customer
+- 3 The System authenticates the User
 
 **Postconditions**:
 
@@ -115,10 +113,81 @@ The table below contains brief semantics for the actors
   - 2.1 The System asks the User username and password.
   - 2.2 The User enters username and password.
   - 2.3 The username and/or password are wrong.
-- 3 The system logs a security violation.
+- 3 The System logs a security violation.
 
 **Postcondition**:
 
 - User is not logged in
 - System log a security violation
 
+#### Use Case: Register
+
+**ID**: **UC2**
+
+**Actors**: 
+
+- User
+
+**Preconditions**:
+
+- User is not logged on to the system.
+
+**Flow of events**:
+
+- 1 The use case begins when the User selects “Register”.
+- 2 The System asks the User to enter a username and password.
+- 3 The Customer enters the requested information.
+- 4 The System checks to see if the username is available and the password is valid.
+- 5 While the username is not available or the password is invalid
+  - 5.1 The System asks for a new username and/or password.
+- 6 The system asks the Customer for the following information: name and address, email address, phone number, credit card details.
+- 7 The Customer enters the requested information.
+- 8 While information is missing
+  - 8.1 The System asks the Customer for the missing information.
+  - 8.2 The User enters the missing information.
+9 The System confirms that the User information has been accepted
+
+**Postcondition**:
+
+- 1 The System has saved the Costumer details.
+- 2 The Customer is assigned a username and password.
+- 3 The Customer is assigned a unique customer identifier.
+
+
+#### Use Case: Update Account
+
+**ID**: **UC3**
+
+**Actors**: 
+
+- Costumer
+
+**Preconditions**:
+
+- Costumer is logged on to the system.
+
+**Flow of events**:
+
+- 1 The use case begins when the Costumer selects “Modify Account”.
+- 2 The system displays the customer details including name and address, email address, phone number, credit card details.
+- 3 The Customer select a field and changes its value.
+- 4 The Costumer selects "Save Changes"
+- 5 While new informations are invalid
+  - 5.1 System asks to insert correct informations
+  - 5.2 The Costumer select incorrect informations and changes its value
+  - 5.3 The Costumer selects "Save Changes"
+6 The System confirms the changes
+
+**Postcondition**:
+
+- 1 The Customer’s details have been updated.
+
+**Secondary Scenario**:
+- 1 The use case begins when the Costumer selects “Modify Account”.
+- 2 The system displays the customer details including name and address, email address, phone number, credit card details.
+- 3 The Customer select a field and changes its value.
+- 4 The Costumer exits.
+
+**Postcondition**:
+
+- 1 The Customer’s details have not changes.
