@@ -1,3 +1,5 @@
+/newpage
+
 # Software Requirements Specification
 
 ## Glossary
@@ -17,11 +19,11 @@
 | RBAC |
 | User |
 
+\newpage
+
 ### MoSCoW Terminology
 
 ![MoSCoW](./images/moscow.png)
-
-\newpage
 
 ## Functional Requirements
 
@@ -54,8 +56,6 @@ The basic functional requirements are:
 |  RF_25   | System **shall** track information about orders | Delivery&Tracking |
 |  RF_26   | System **shall** display track information about customer order. | Delivery&Tracking |
 |  RF_27   | System **shall** allow the dispatch department to update state of order. | Delivery&Tracking |
-
-\newpage
 
 ## Not-Functional Requirements
 
