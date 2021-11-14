@@ -228,3 +228,8 @@ The table below contains brief semantics for the actors
 
 - 1 The Customer’s account has been deleted.
 
+\newpage
+
+### Use Case Diagram 2
+
+![Use Case Model](./models/usecase_book.png)
