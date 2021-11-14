@@ -21,6 +21,7 @@
 
 ![MoSCoW](./images/moscow.png)
 
+\newpage
 
 ## Functional Requirements
 
@@ -54,6 +55,8 @@ The basic functional requirements are:
 |  RF_26   | System **shall** display track information about customer order. | Delivery&Tracking |
 |  RF_27   | System **shall** allow the dispatch department to update state of order. | Delivery&Tracking |
 
+\newpage
+
 ## Not-Functional Requirements
 
 The basic not-function requirements are:
@@ -64,6 +67,8 @@ The basic not-function requirements are:
 |  NF_2   | System **shall** collect costumer information in according to GPDR | ComplianceTo-Standards |
 |  NF_3   | System **shall** store sales transaction data. | Availability |
 |  NF_4   | System **could** use a RBAC system. | Security |
+
+\newpage
 
 ## Use Case Model
 
@@ -80,6 +85,8 @@ The table below contains brief semantics for the actors
 ### Use Case Diagram 1
 
 ![Use Case Model](./models/usecase_registrationlogin.png)
+
+\newpage
 
 #### Use Case: Login
 
@@ -120,6 +127,8 @@ The table below contains brief semantics for the actors
 - User is not logged in
 - System log a security violation
 
+\newpage
+
 #### Use Case: Register
 
 **ID**: **UC2**
@@ -153,6 +162,7 @@ The table below contains brief semantics for the actors
 - 2 The Customer is assigned a username and password.
 - 3 The Customer is assigned a unique customer identifier.
 
+\newpage
 
 #### Use Case: Update Account
 
@@ -192,6 +202,7 @@ The table below contains brief semantics for the actors
 
 - 1 The Customer’s details have not changes.
 
+\newpage
 
 #### Use Case: Delete Account
 
