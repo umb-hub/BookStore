@@ -174,7 +174,7 @@ The table below contains brief semantics for the actors
 
 **Preconditions**:
 
-- Costumer is logged on to the system.
+- None
 
 **Flow of events**:
 
@@ -214,7 +214,7 @@ The table below contains brief semantics for the actors
 
 **Preconditions**:
 
-- Administrator is logged on to the system.
+- None.
 
 **Flow of events**:
 
@@ -233,3 +233,57 @@ The table below contains brief semantics for the actors
 ### Use Case Diagram 2
 
 ![Use Case Model](./models/usecase_book.png)
+
+\newpage
+
+#### Use Case: Add Item To Cart
+
+**ID**: **UC5**
+
+**Actors**: 
+
+- Customer
+
+**Preconditions**:
+
+- None
+
+**Flow of events**:
+
+- 1 The Customer selects a product
+- 2 The Customer selects “Add Item”.
+- 3 The system adds the item to the Customer’s shopping cart.
+
+**Postcondition**:
+
+- 1 A product has been added to the Customer’s cart.
+
+\newpage
+
+#### Use Case: Add Item To Cart
+
+**ID**: **UC6**
+
+**Actors**: 
+
+- Customer
+
+**Preconditions**:
+
+- None
+
+**Flow of events**:
+- 1 The Customer selects “Display Cart”.
+- 2 If there are no items in the cart
+  - 2.1 The system tells the Customer that the cart is empty.
+  - 2.2 The use case terminates
+- 3 For each book in the cart
+   - 3.1 The System displays the book detail,  quantity, unit price and total price.
+- extension point: manageCart
+- extension point: checkout
+- 
+**Postcondition**:
+
+- 1 None
+
+\newpage
