@@ -284,7 +284,7 @@ The table below contains brief semantics for the actors
 
 **Postcondition**:
 
-- 1 None
+- None
 
 \newpage
 
@@ -310,6 +310,6 @@ The table below contains brief semantics for the actors
 
 **Postcondition**:
 
-- 1 None
+- None
 
 \newpage
