@@ -176,7 +176,7 @@ The table below contains brief semantics for the actors
   - 5.1 System asks to insert correct informations
   - 5.2 The Costumer select incorrect informations and changes its value
   - 5.3 The Costumer selects "Save Changes"
-6 The System confirms the changes
+- 6 The System confirms the changes
 
 **Postcondition**:
 
@@ -191,3 +191,29 @@ The table below contains brief semantics for the actors
 **Postcondition**:
 
 - 1 The Customer’s details have not changes.
+
+
+#### Use Case: Delete Account
+
+**ID**: **UC4**
+
+**Actors**: 
+
+- Administrator
+
+**Preconditions**:
+
+- Administrator is logged on to the system.
+
+**Flow of events**:
+
+- 1 The use case begins when the Adminstrator selects “Delete Account”.
+- 2 The System asks for a username
+- 3 The Adminstrator enters the username
+- 4 The System displays account details
+- 5 The Adminstrator confirms the deletion
+
+**Postcondition**:
+
+- 1 The Customer’s account has been deleted.
+
