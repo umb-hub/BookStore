@@ -402,8 +402,14 @@ The table below contains brief semantics for the actors
 
 **Flow of events**:
 
-- 1 The use case begins when the Customer select a book.
-- 2 The System displays book's information: ISBN, name, author, publisher and price.
+- 1 The system displays a page containing a maximum of 10 books. This page includes the following summary information for each book: title, author, publisher, price.
+- 2 While the Customer is browsing
+- 2.1 If there are more products to display
+  - 2.1.1 The Customer may select “Next” to view the next page of products.
+- 2.2 If the Customer is not on the first page of products
+  - 2.2.1 The Customer may select “Previous” to view the previous page of products.
+
+extension point: showbook
 
 **Postcondition**:
 
