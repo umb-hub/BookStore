@@ -273,6 +273,7 @@ The table below contains brief semantics for the actors
 - None
 
 **Flow of events**:
+
 - 1 The Customer selects “Display Cart”.
 - 2 If there are no items in the cart
   - 2.1 The system tells the Customer that the cart is empty.
@@ -327,6 +328,7 @@ The table below contains brief semantics for the actors
 - None 
 
 **Flow of events**:
+
 - 1 The use case begins when the Customer selects “Checkout”.
 - 2 The System presents the final order to the Customer. The order includes an order line for each book that shows the product name, the quantity, the unit price, the total price for that quantity. The order also includes the shipping address of the Customer and the total cost of the order including tax and postage and packing.
 - 3 The System asks the Customer to accept or decline the order
@@ -336,9 +338,43 @@ The table below contains brief semantics for the actors
   - 6.1  include(AcceptPaymentByCard)
 - 7 If Costumer select cash on delivery
   - 7.1 The System add service's cost
+
 **Postcondition**:
 
 - 1 The Customer has accepted the order.
 - 2 An Order is been created
+
+\newpage
+
+#### Use Case: Payment By Card
+
+**ID**: **UC8**
+
+**Actors**: 
+
+- Customer
+- Credit Card Issuer
+
+**Preconditions**:
+
+- None 
+
+**Flow of events**:
+
+- 1 The use case begins when the Customer accepts the order.
+- 2 The System retrieves the Customer’s credit card details.
+- 3 The system sends a message to the Credit Card Issuer that includes: merchant identifier, merchant authentication, name on card, number of card, expiry date of card, amount of transaction.
+- 4 The Credit Card Issuer authorises the transaction.
+- 5 The System notifies the Customer that the card transaction has been accepted.
+- 6 The System gives the Customer an order reference number for tracking the order.
+- 7 The System sends the order to the Dispatcher.
+- 8 The System changes the order’s state to pending.
+- 9 The System displays an order confirmation that the Customer may print out.
+
+**Postcondition**:
+
+- 1 The order status has been set to pending.
+- 2 The Customer’s credit card has been debited by the appropriate amount.
+- 3 The order has been sent to the Dispatcher.
 
 \newpage
