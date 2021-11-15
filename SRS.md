@@ -350,7 +350,7 @@ The table below contains brief semantics for the actors
 
 #### Use Case: Payment By Card
 
-**ID**: **UC8**
+**ID**: **UC9**
 
 **Actors**: 
 
@@ -387,3 +387,30 @@ The table below contains brief semantics for the actors
 - 4 Order is deleted
 
 \newpage
+
+
+#### Use Case: Browse Books
+
+**ID**: **UC10**
+
+**Actors**: 
+
+- Customer
+
+**Preconditions**:
+
+- 1. A set of books has been identified for browsing 
+
+**Flow of events**:
+
+- 1 The system displays a page containing a maximum of 10 books. This page includes the following summary information for each book: title, author, publisher, price.
+- 2 While the Customer is browsing
+- 2.1 If there are more products to display
+  - 2.1.1 The Customer may select “Next” to view the next page of products.
+- 2.2 If the Customer is not on the first page of products
+  - 2.2.1 The Customer may select “Previous” to view the previous page of products.
+extension point: showbook
+
+**Postcondition**:
+
+None
