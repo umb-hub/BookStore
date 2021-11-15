@@ -413,21 +413,22 @@ None
 
 #### Use Case: Show Book
 
-**ID**: **UC10**
+**ID**: **UC11**
 
 **Actors**: 
 
-- Customer
+- User
 
 **Preconditions**:
 
-- 1 A book is selected to be displayed
+- None
 
 **Flow of events**:
 
-- 1 The system displays a page containing a maximum of 10 books. This page includes the following summary information for each book: title, author, publisher, price.
+- 1 The use case begins when the Customer select a book.
+- 2 The System displays book's information: ISBN, name, author, publisher and price.
 
-extension point: addbookincart
+extension point: buybook
 
 **Postcondition**:
 
