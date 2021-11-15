@@ -439,3 +439,32 @@ extension point: buybook
 **Postcondition**:
 
 None
+
+\newpage
+
+#### Use Case: Find Book
+
+**ID**: **UC12**
+
+**Actors**: 
+
+- User
+
+**Preconditions**:
+
+- None
+
+**Flow of events**:
+
+- 1 The Customer selects “Find Book”.
+- 2 The System asks the Customer for book search criteria that consist of one or more of the following: title, author, ISBN, category.
+- 3 The Customer enters the search criteria.
+- 4 The System searches for books that match the Customer's criteria.
+- 5 If the system finds some books
+  - 5.1 include(Browse Books).
+- 6 Else
+  - 6.1 The System tells the Customer that no matching products were found.
+
+**Postcondition**:
+
+None
