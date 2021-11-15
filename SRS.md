@@ -313,3 +313,32 @@ The table below contains brief semantics for the actors
 - None
 
 \newpage
+
+#### Use Case: Checkout
+
+**ID**: **UC8**
+
+**Actors**: 
+
+- Customer
+
+**Preconditions**:
+
+- None 
+
+**Flow of events**:
+- 1 The use case begins when the Customer selects “Checkout”.
+- 2 The System presents the final order to the Customer. The order includes an order line for each book that shows the product name, the quantity, the unit price, the total price for that quantity. The order also includes the shipping address of the Customer and the total cost of the order including tax and postage and packing.
+- 3 The System asks the Customer to accept or decline the order
+- 4 The Customer accepts the order.
+- 5 The System asks to choose payment method
+- 6 If Customer select online payment
+  - 6.1  include(AcceptPaymentByCard)
+- 7 If Costumer select cash on delivery
+  - 7.1 The System add service's cost
+**Postcondition**:
+
+- 1 The Customer has accepted the order.
+- 2 An Order is been created
+
+\newpage
