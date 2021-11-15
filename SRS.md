@@ -302,6 +302,7 @@ The table below contains brief semantics for the actors
 - 1 The System is displaying the shopping cart.
 
 **Flow of events**:
+
 - 1 While the Customer is updating the cart
   - 1.1 The Customer selects an item in the cart.
   - 1.2 If the Customer selects “Remove Item”
@@ -338,11 +339,12 @@ The table below contains brief semantics for the actors
   - 6.1  include(AcceptPaymentByCard)
 - 7 If Costumer select cash on delivery
   - 7.1 The System add service's cost
+  - 7.3 The order status has been set to pending.
+  - 7.2 The order has been sent to the Dispatcher.
 
 **Postcondition**:
 
-- 1 The Customer has accepted the order.
-- 2 An Order is been created
+- 1 The Customer has accepted the order
 
 \newpage
 
@@ -376,5 +378,12 @@ The table below contains brief semantics for the actors
 - 1 The order status has been set to pending.
 - 2 The Customer’s credit card has been debited by the appropriate amount.
 - 3 The order has been sent to the Dispatcher.
+
+**Secondary Scenario**:
+
+- 1 The secondary scenario begins after step 3 of the primary scenario
+- 2 The Credit Card Issue doesn't allow transaction
+- 3 The system displays a message telling the Customer that their order can’t be processed.
+- 4 Order is deleted
 
 \newpage
