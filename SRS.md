@@ -468,3 +468,51 @@ None
 **Postcondition**:
 
 None
+
+#### Use Case: Add Book
+
+**ID**: **UC13**
+
+**Actors**: 
+
+- Administrator
+
+**Preconditions**:
+
+- None
+
+**Flow of events**:
+
+- 1 The use case begins when the Administrator selects “Add Product”.
+- 2 The system asks the Shopkeeper to enter the following product information: ISBN,title, category, authors, publisher, price, description, image.
+- 3 The Administrator enters the requested information..
+- 4 The System adds the new book to the catalog.
+
+**Postcondition**:
+
+- 1 A new product has been added to the catalog.
+
+#### Use Case: Delete Book
+
+**ID**: **UC14**
+
+**Actors**: 
+
+- Administrator
+
+**Preconditions**:
+
+- None
+
+**Flow of events**:
+
+- 1 The use case begins when the Administrator selects “Delete Product”.
+- 2 The System asks the Shopkeeper for the book identifier (ISBN) of the book to delete..
+- 3 The Administrator enters the requested information..
+- 4 The System displays the product details.
+- 5 The Administrator cofirms the deletion.
+- 6 The System deletes the product from the catalog.
+
+**Postcondition**:
+
+- 1 A new product has been deleted to the catalog.
