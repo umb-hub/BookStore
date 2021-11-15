@@ -388,7 +388,6 @@ The table below contains brief semantics for the actors
 
 \newpage
 
-
 #### Use Case: Browse Books
 
 **ID**: **UC10**
@@ -399,17 +398,36 @@ The table below contains brief semantics for the actors
 
 **Preconditions**:
 
-- 1. A set of books has been identified for browsing 
+- 1 A set of books has been identified for browsing 
+
+**Flow of events**:
+
+- 1 The use case begins when the Customer select a book.
+- 2 The System displays book's information: ISBN, name, author, publisher and price.
+
+**Postcondition**:
+
+None
+
+\newpage
+
+#### Use Case: Show Book
+
+**ID**: **UC10**
+
+**Actors**: 
+
+- Customer
+
+**Preconditions**:
+
+- 1 A book is selected to be displayed
 
 **Flow of events**:
 
 - 1 The system displays a page containing a maximum of 10 books. This page includes the following summary information for each book: title, author, publisher, price.
-- 2 While the Customer is browsing
-- 2.1 If there are more products to display
-  - 2.1.1 The Customer may select “Next” to view the next page of products.
-- 2.2 If the Customer is not on the first page of products
-  - 2.2.1 The Customer may select “Previous” to view the previous page of products.
-extension point: showbook
+
+extension point: addbookincart
 
 **Postcondition**:
 
