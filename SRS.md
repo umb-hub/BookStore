@@ -1,6 +1,6 @@
 /newpage
 
-# SAnalysis Phase
+# Analysis Phase
 
 ## Glossary
 
