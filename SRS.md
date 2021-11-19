@@ -149,12 +149,12 @@ The table below contains brief semantics for the actors
 - 4 The System checks to see if the username is available and the password is valid.
 - 5 While the username is not available or the password is invalid
   - 5.1 The System asks for a new username and/or password.
-- 6 The system asks the Customer for the following information: name and address, email address, phone number, credit card details.
+- 6 The system asks the Customer for the following information: name and address, email address, phone number, credit card details (optionally).
 - 7 The Customer enters the requested information.
 - 8 While information is missing
   - 8.1 The System asks the Customer for the missing information.
   - 8.2 The User enters the missing information.
-9 The System confirms that the User information has been accepted
+- 9 The System confirms that the User information has been accepted
 
 **Postcondition**:
 
