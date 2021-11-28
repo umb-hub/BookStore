@@ -2,9 +2,24 @@
 
 # Requirement Software Analysis
 
+## Glossary Project
+
+| Terms | Definition |
+| :---- | :--------- | 
+| Catalog | A listing of all of the products that shop currently offers for sale. |
+| Checkout | An electronic analogue of a real-world checkout in a supermarket. A place where customers can pay for the products in their shopping cart. |
+| Credit card | A card such as VISA or Mastercard that can be used for paying for products. |
+| Customer A party who buys products or services from Clear View Training Limited.
+| Order | A document raised by a customer specifying one or more products that have been purchased. The order specifies the quantity of each product. Orders are passed to the Dispatch Department for processing. |
+| Product | A book offered for sale. |
+| Cart | An electronic analogue of a real-world shopping cart. A place where customers can store their items prior to purchase. |
+| Browser | A program which allows users to browse the World Wide Web. |
+| Captcha | A challange that requires to correctly evaluate a distorted image in order to determine that user is human. |
+| OTP | A password that is valid for only one login session. |
+
 \newpage
 
-### MoSCoW Terminology
+## MoSCoW Terminology
 
 ![MoSCoW](./images/moscow.png)
 
@@ -35,6 +50,7 @@ The basic functional requirements are:
 |  RF_19   | System **shall** display track information about customer order. | Delivery&Tracking |
 |  RF_20   | System **must** allow the dispatch department to update state of order. | Delivery&Tracking |
 | RF_21 | System **could** save the cart of last customer session. | Registration/Login |  
+
 ## Not-Functional Requirements
 
 The basic not-function requirements are:
@@ -451,6 +467,8 @@ None
 
 None
 
+\newpage
+
 #### Use Case: Add Book
 
 **ID**: **UC13**
@@ -473,6 +491,8 @@ None
 **Postcondition**:
 
 - 1 A new book has been added to the catalog.
+
+\newpage
 
 #### Use Case: Delete Book
 
@@ -498,3 +518,99 @@ None
 **Postcondition**:
 
 - 1 A book has been deleted to the catalog.
+
+\newpage
+
+## Class Diagram
+
+This is a first-cut use case diagram
+
+![Class Diagram Analysis](./models/classdiagram_analysis.jpg)
+
+\newpage
+
+## Use Case Realization
+
+The process of use case realization involves demonstrating how the analysis classes that
+you have identified interact together to realize the behavior specified by the use cases. Use
+case realizations consist of:
+- Detailed analysis class diagrams
+-  Sequence and communication diagrams for the use cases.
+
+### Sequence diagrams
+
+
+#### UC1 - Login
+![Sequence Diagram Analysis](./models/UC1%20-%20Login.jpg)
+
+
+#### UC2 - Register
+![Sequence Diagram Analysis](./models/UC2%20-%20Register.jpg)
+
+\newpage
+
+#### UC3 - UpdateAccount
+
+![Sequence Diagram Analysis](./models/UC3%20-%20UpdateAccount.jpg)
+
+#### UC4 - DeleteAccount
+
+![Sequence Diagram Analysis](./models/UC4%20-%20DeleteAccount.jpg)
+
+\newpage
+
+#### UC5 - AddItemToCart
+
+![Sequence Diagram Analysis](./models/UC5%20-%20AddItemToCart.jpg)
+
+#### UC6 - DisplayCart
+
+![Sequence Diagram Analysis](./models/UC6%20-%20DisplayCart.jpg)
+
+\newpage
+
+#### UC7 - ManageCart
+
+![Sequence Diagram Analysis](./models/UC7%20-%20ManageCart.jpg)
+
+#### UC8 - Checkout
+
+![Sequence Diagram Analysis](./models/UC8%20-%20Checkout.jpg)
+
+\newpage
+
+#### UC9 - PaymentByCard
+
+![Sequence Diagram Analysis](./models/UC9%20-%20PaymentByCard.jpg)
+
+#### UC10 - BrowseBooks
+
+![Sequence Diagram Analysis](./models/UC10%20-%20BrowseBooks.jpg)
+
+\newpage
+
+#### UC10 - BrowseBooks
+
+![Sequence Diagram Analysis](./models/UC10%20-%20BrowseBooks.jpg)
+
+\newpage
+
+#### UC11 - ShowBook
+
+![Sequence Diagram Analysis](./models/UC11%20-%20ShowBook.jpg)
+
+#### UC12 - FindBooks
+
+![Sequence Diagram Analysis](./models/UC12%20-%20FindBooks.jpg)
+
+\newpage
+
+#### UC13 - AddBook
+
+![Sequence Diagram Analysis](./models/UC13%20-%20AddBook.jpg)
+
+#### UC14 - DeleteBook
+
+![Sequence Diagram Analysis](./models/UC14%20-%20DeleteBook.jpg)
+
+\newpage

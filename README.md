@@ -1,3 +1,5 @@
+\newpage
+
 # SchoolBook
 Advanced Software Engineering Project
 
