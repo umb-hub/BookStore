@@ -45,6 +45,7 @@ In this project shop catalog is oblivious a object with a single instance :
 
 ![MVC](./images/singleton.png)
 
+\newpage
 
 ### Memento
 
@@ -64,6 +65,7 @@ In this project, Function requiremente RF_21 aims to save and restore cart of la
 
 ![Memento Custom](./images/custom_memento.png)
 
+\newpage
 
 ### Chain Of Responsability
 
@@ -110,3 +112,31 @@ In order to validate class diagram, some meaningful sequence diagram are showed 
 ### UC10 - ShowBook
 
 ![UC10](./models/ZUC10%20-%20BrowseBooks.jpg)
+
+\newpage
+
+## Component Diagram
+
+In according to MVC architectural pattern, component diagram shows a logical layered architecture :
+
+- View Package : React Framework Components used as Presentation Layer
+- Controller Package : Nodejs script files used as Business Layer
+- Model Package : Nodejs script files used as Database Layer
+
+The outer interfaces are used by actor to interface System, instead inner inferfaces declare MVC relationship.
+
+![Component Diagram](./models/component.jpg)
+
+\newpage
+
+### Deployment Diagram
+
+In order to define physical architecture component diagram is followed by an Deployment Diagram that include previous packages and some artifacts. 
+
+![Deployment Diagram](./models/deployment.jpg)
+
+As shown software architecture is defined by:
+
+- Front End Server: implements presentation layer using Nodejs enviroment and React Framework
+- Back End Server: implements API Interface (discussed in next chapter) and business layer using Nodejs enviroment and Express Middleware.
+- SQL Server: implements Data Access Layer using a MySQL server.
