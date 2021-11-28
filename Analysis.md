@@ -1,23 +1,6 @@
 /newpage
 
-# Analysis Phase
-
-## Glossary
-
-### General Glossary
-| Term | Definition |
-| ---- | ---------- |
-| Cart |
-| Checkout |
-| Catalog | 
-| Credit Card |
-| Customer |
-| Dispatch System |
-| Order |
-| OTP  |
-| ISBN |
-| RBAC |
-| User |
+# Requirement Software Analysis
 
 \newpage
 
@@ -51,7 +34,7 @@ The basic functional requirements are:
 |  RF_18   | System **shall** track information about orders | Delivery&Tracking |
 |  RF_19   | System **shall** display track information about customer order. | Delivery&Tracking |
 |  RF_20   | System **must** allow the dispatch department to update state of order. | Delivery&Tracking |
-! RF_21 | System **could** save the cart of last customer session. | Registration/Login |  
+| RF_21 | System **could** save the cart of last customer session. | Registration/Login |  
 ## Not-Functional Requirements
 
 The basic not-function requirements are:
