@@ -81,7 +81,32 @@ In this project, not functional requirement NF_4 asks to use a multifactor authe
 
 ![Chain of Responsability](./images/customchain.png)
 
+\newpage
+
 ## Sequence Diagram
 
-In order to validate class diagram, some sequence diagram are showed up
+In order to validate class diagram, some meaningful sequence diagram are showed up
 
+### UC1 - Login
+
+![UC1](./models/ZUC1%20-%20Login.jpg)
+
+### UC5 - AddItemToCart
+
+![UC5](./models/ZUC5%20-%20AddItemToCart.jpg)
+
+\newpage
+
+### UC6 - DisplayCart
+
+![UC6](./models/ZUC6%20-%20DisplayCart.jpg)
+
+### UC8 - Checkout
+
+![UC8](./models/ZUC8%20-%20Checkout.jpg)
+
+\newpage
+
+### UC10 - ShowBook
+
+![UC10](./models/ZUC10%20-%20BrowseBooks.jpg)
