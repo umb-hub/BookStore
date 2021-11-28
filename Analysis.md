@@ -33,40 +33,35 @@ The basic functional requirements are:
 | -------- |:------------ | :------- | 
 |  RF_1    | System **must** allow the user to register. | Registration/Login | 
 |  RF_2    | System **must** allow the user to login as customer. | Registration/Login |
+| RF_3 | System **shall** allow the administrator to delete customers. | Registration/Login |  
 |  RF_4    | System **must** shall collect customer information consisting of name, address, email address, phone number, credit card information. | Registration/Login | 
-|  RF_5    | System **must** allow  the customer to view and edit its customer information. | Registration/Login | 
-|  RF_6    | System **shall** authenticate costumers with password to viewing outstanding orders, viewing customer information and write feedback for a book. | Registration/Login | 
-|  RF_7    | System **shall** authenticate costumers with OTP to making payment or edit customer information. | Registration/Login | 
-|  RF_8    | System **must** display a list of all books of store to users. | Book Details | 
-|  RF_9    | System **must** organise the list of books by category. | Book Details | 
-|  RF_10   | System **must** display detailed book description consisting of ISBN, name, author, publisher, cover image, summary, price to users. | Book Details | 
-|  RF_11   | System **must** display book's feedbacks to users. | Book Details | 
-|  RF_12   | System **must** accept all major credit cards. | Payment | 
-|  RF_13   | System **shall** validate payment with the credit card processing company. | Payment | 
-|  RF_14   | System **must** allow the customer to choose payment method: credit cards or cash on delivery. | User Interface | 
-|  RF_15   | System **must** allow the customer to place items into cart. | User Interface | 
-|  RF_16   | System **must** allow the customer to remove items from cart. | User Interface | 
-|  RF_17   | System **must** allow the customer to checkcout cart. | User Interface | 
-|  RF_18   | System **must** allow the dispatch department to view all orders. | Orders |
-|  RF_19   | System **shall** allow customers to view their order history. | Orders |
-|  RF_21   | System **shall** allow the administrator to add books to catalog | Stock Managament |
-|  RF_22   | System **shall** allow the administrator to delete books from catalog | Stock Management |
-|  RF_23   | System **shall** display quantity of book in stock. | Stock Management |
-|  RF_24   | System **shall** allow the administrator to update stock | Stock Management |
-|  RF_25   | System **shall** track information about orders | Delivery&Tracking |
-|  RF_26   | System **shall** display track information about customer order. | Delivery&Tracking |
-|  RF_27   | System **shall** allow the dispatch department to update state of order. | Delivery&Tracking |
-
+|  RF_5    | System **shall** allow the customer to view and edit its customer information. | Registration/Login |
+|  RF_6    | System **must** display a list of all books of store to users. | Book Details | 
+|  RF_7   | System **must** display detailed book description consisting of ISBN, name, author, publisher, cover image, summary, price to users. | Book Details | 
+|  RF_8   | System **shall** accept all major credit cards. | Payment | 
+|  RF_9   | System **must** validate payment with the credit card processing company. | Payment | 
+|  RF_10   | System **must** allow the customer to choose payment method: credit cards or cash on delivery. | User Interface | 
+|  RF_11   | System **must** allow the customer to place items into cart. | User Interface | 
+|  RF_12   | System **must** allow the customer to remove items from cart. | User Interface | 
+|  RF_13   | System **must** allow the customer to checkcout cart. | User Interface | 
+|  RF_14   | System **must** allow the dispatch department to view all orders. | Orders |
+|  RF_15   | System **shall** allow customers to view their order history. | Orders |
+|  RF_16   | System **must** allow the administrator to add books to catalog | Stock Managament |
+|  RF_17   | System **must** allow the administrator to delete books from catalog | Stock Management |
+|  RF_18   | System **shall** track information about orders | Delivery&Tracking |
+|  RF_19   | System **shall** display track information about customer order. | Delivery&Tracking |
+|  RF_20   | System **must** allow the dispatch department to update state of order. | Delivery&Tracking |
+! RF_21 | System **could** save the cart of last customer session. | Registration/Login |  
 ## Not-Functional Requirements
 
 The basic not-function requirements are:
 
 | ID       |Description  | Type |
 | --------|:-------------| ---- |
-|  NF_1   | System **shall** use a browser as its user interface. | ComplianceTo-Standards |
-|  NF_2   | System **shall** collect costumer information in according to GPDR | ComplianceTo-Standards |
-|  NF_3   | System **shall** store sales transaction data. | Availability |
-|  NF_4   | System **could** use a RBAC system. | Security |
+|  NF_1   | System **must** use a browser as its user interface. | ComplianceTo-Standards |
+|  NF_2   | System **must** collect costumer information in according to GPDR | ComplianceTo-Standards |
+|  NF_3   | System **must** store sales transaction data. | Availability |
+|  NF_4   | System **shall** use a multifactor authentication. | Security |
 
 \newpage
 
@@ -78,13 +73,17 @@ The table below contains brief semantics for the actors
 
 | Actors | Description |
 | :----- | :---------- |
-| Customer | |
-| User | |
-| Administrator | |
+| Administrator | A special user of the system who can manage shop and other costumers. |
+| Credit Card Issuer | An external company that processes credit card transactions. |
+| Customer | Authenticated user who can buy books from shop. |
+| Dispatcher | Subject or systen who can manage order and shippment. |
+| User | Someone who uses the system but who is not a customer. |
 
-### Use Case Diagram 1
+\newpage
 
-![Use Case Model](./models/usecase_registrationlogin.png)
+### Use Case Diagram
+
+![Use Case Model](./models/usecase.jpg)
 
 \newpage
 
@@ -103,23 +102,29 @@ The table below contains brief semantics for the actors
 **Flow of events**:
 
 - 1 The scenario begins when the User selects “Login”.
-- 2 While the User is not logged on and the number of authentication attempts is less than or equal to three:
-  - 2.1 The System asks the User username and password.
-  - 2.2 The User enters username and password.
-  - 2.3 The username and password are correct.
-- 3 The System authenticates the User
+- 2 While the User is not logged on:
+  - 2.1 The System asks the User email and password.
+  - 2.2 The User enters email and password.
+  - 2.3 If email and password are correct:
+    - 2.3.1 The System asks the User to solve a captcha
+    - 2.3.2 The User enters captcha
+    - 2.3.3 If captcha is correct
+      - 2.3.3.1 The System sends OTP code to Customer's phone number:
+      - 2.3.3.2 The User enters OTP code
+      - 2.3.3.3 It OTP code is correct: 
+      - 2.3.3.4 The System authenticates the User
 
 **Postconditions**:
 
-- User is a Customer or an Administrator
+- User is a Customer
 
 **Secondary Scenario**:
 
 - 1 The scenario begins when the Customer selects “Log On”.
-- 2 While the User is not logged on and the number of authentication attempts is less than or equal to three
-  - 2.1 The System asks the User username and password.
-  - 2.2 The User enters username and password.
-  - 2.3 The username and/or password are wrong.
+- 2 While the User is not logged on
+  - 2.1 The System asks the User email and password.
+  - 2.2 The User enters email and password.
+  - 2.3 The email and/or password are wrong.
 - 3 The System logs a security violation.
 
 **Postcondition**:
@@ -144,15 +149,15 @@ The table below contains brief semantics for the actors
 **Flow of events**:
 
 - 1 The use case begins when the User selects “Register”.
-- 2 The System asks the User to enter a username and password.
-- 3 The Customer enters the requested information.
-- 4 The System checks to see if the username is available and the password is valid.
-- 5 While the username is not available or the password is invalid
-  - 5.1 The System asks for a new username and/or password.
-- 6 The system asks the Customer for the following information: name and address, email address, phone number, credit card details (optionally).
-- 7 The Customer enters the requested information.
+- 2 The System asks the User to enter a email and password.
+- 3 The User enters the requested information.
+- 4 The System checks to see if the email is unique and the password is valid.
+- 5 While the email is not unique or the password is invalid
+  - 5.1 The System asks for a new email and/or password.
+- 6 The System asks the Customer for the following information: name and address, phone number, credit card details (optionally).
+- 7 The User enters the requested information.
 - 8 While information is missing
-  - 8.1 The System asks the Customer for the missing information.
+  - 8.1 The System asks the User for the missing information.
   - 8.2 The User enters the missing information.
 - 9 The System confirms that the User information has been accepted
 
@@ -219,20 +224,14 @@ The table below contains brief semantics for the actors
 **Flow of events**:
 
 - 1 The use case begins when the Adminstrator selects “Delete Account”.
-- 2 The System asks for a username
-- 3 The Adminstrator enters the username
-- 4 The System displays account details
+- 2 The System asks for a email
+- 3 The Adminstrator enters the email
+- 4 The System displays Customer details related to email
 - 5 The Adminstrator confirms the deletion
 
 **Postcondition**:
 
 - 1 The Customer’s account has been deleted.
-
-\newpage
-
-### Use Case Diagram 2
-
-![Use Case Model](./models/usecase_book.png)
 
 \newpage
 
@@ -331,7 +330,7 @@ The table below contains brief semantics for the actors
 **Flow of events**:
 
 - 1 The use case begins when the Customer selects “Checkout”.
-- 2 The System presents the final order to the Customer. The order includes an order line for each book that shows the product name, the quantity, the unit price, the total price for that quantity. The order also includes the shipping address of the Customer and the total cost of the order including tax and postage and packing.
+- 2 The System presents the final order to the Customer. The order includes an order line for each book that shows the product name, the quantity, the unit price, the total price for that quantity. The order also includes the shipping address of the Customer and the total cost of the order including postage and packing costs.
 - 3 The System asks the Customer to accept or decline the order
 - 4 The Customer accepts the order.
 - 5 The System asks to choose payment method
@@ -365,7 +364,7 @@ The table below contains brief semantics for the actors
 
 - 1 The use case begins when the Customer accepts the order.
 - 2 The System retrieves the Customer’s credit card details.
-- 3 The system sends a message to the Credit Card Issuer that includes: merchant identifier, merchant authentication, name on card, number of card, expiry date of card, amount of transaction.
+- 3 The System sends a message to the Credit Card Issuer that includes: merchant identifier, merchant authentication, name on card, number of card, expiry date of card, amount of transaction.
 - 4 The Credit Card Issuer authorises the transaction.
 - 5 The System notifies the Customer that the card transaction has been accepted.
 - 6 The System gives the Customer an order reference number for tracking the order.
@@ -432,7 +431,7 @@ None
 **Flow of events**:
 
 - 1 The use case begins when the Customer select a book.
-- 2 The System displays book's information: ISBN, name, author, publisher and price.
+- 2 The System displays book's information: ISBN, name, author, publisher, price and stock avaibility.
 
 extension point: buybook
 
@@ -442,7 +441,7 @@ None
 
 \newpage
 
-#### Use Case: Find Book
+#### Use Case: Find Books
 
 **ID**: **UC12**
 
@@ -463,7 +462,7 @@ None
 - 5 If the system finds some books
   - 5.1 include(Browse Books).
 - 6 Else
-  - 6.1 The System tells the Customer that no matching products were found.
+  - 6.1 The System tells the Customer that no matching books were found.
 
 **Postcondition**:
 
@@ -483,14 +482,14 @@ None
 
 **Flow of events**:
 
-- 1 The use case begins when the Administrator selects “Add Product”.
-- 2 The system asks the Shopkeeper to enter the following product information: ISBN,title, category, authors, publisher, price, description, image.
+- 1 The use case begins when the Administrator selects “Add Book.
+- 2 The System asks the Shopkeeper to enter the following product information: ISBN,title, category, authors, publisher, price, description, image.
 - 3 The Administrator enters the requested information..
 - 4 The System adds the new book to the catalog.
 
 **Postcondition**:
 
-- 1 A new product has been added to the catalog.
+- 1 A new book has been added to the catalog.
 
 #### Use Case: Delete Book
 
@@ -509,10 +508,10 @@ None
 - 1 The use case begins when the Administrator selects “Delete Product”.
 - 2 The System asks the Shopkeeper for the book identifier (ISBN) of the book to delete..
 - 3 The Administrator enters the requested information..
-- 4 The System displays the product details.
-- 5 The Administrator cofirms the deletion.
-- 6 The System deletes the product from the catalog.
+- 4 The System displays the book details.
+- 5 The Administrator confirms the deletion.
+- 6 The System deletes the book from the catalog.
 
 **Postcondition**:
 
-- 1 A new product has been deleted to the catalog.
+- 1 A book has been deleted to the catalog.
