@@ -61,13 +61,19 @@ This endpoint permit different methods for different actions.
 
 #### GET
 
+Customer or administrator can get costumer details accounts. Note that token obtained in login process is required for customer or administrator identification,
+
 ![](./images/API/account_get.png)
 
 #### POST
 
+Customer can update its customer details, note that password is not sended in clear but it is hashed in accord to GPDR (NF_2).
+
 ![](./images/API/account_post.png)
 
 #### DELETE
+
+Administrator can delete selected costumer account.
 
 ![](./images/API/account_delete.png)
 
@@ -79,13 +85,19 @@ This endpoint permit different methods for different actions.
 
 #### GET
 
+Customer can get its credit card info, note that credit card is hidden to itself in order to improve security.
+
 ![](./images/API/account_card_get.png)
 
 #### POST
 
+Customer can add a credit card to its account specifing all required parameters.
+
 ![](./images/API/account_card_post.png)
 
 #### DELETE
+
+Customer can delete a credit card from its account specifing index.
 
 ![](./images/API/account_card_delete.png)
 
@@ -98,9 +110,13 @@ This endpoint permit different methods for different actions.
 
 #### GET
 
+Any user can watch book information using specified query parameter
+
 ![](./images/API/book_get.png)
 
 #### POST
+
+Note there is a require parameter **action**, it is used by system to apply different action for different roles.
 
 ![](./images/API/book_post.png)
 
@@ -110,8 +126,9 @@ This endpoint permit different methods for different actions.
 
 ![Catalog REST](./images/API/catalog.png)
 
-
 #### GET/POST
+
+Any user can browse catalog using GET e POST requests to surf on catalog
 
 ![](./images/API/catalog_rest.png)
 
@@ -121,14 +138,17 @@ This endpoint permit different methods for different actions.
 
 ![Cart REST](./images/API/cart.png)
 
-
 #### GET/POST
+
+Costumer can watch and manage its cart using GET/POST requests and query parameters.
 
 ![](./images/API/cart_rest.png)
 
 \newpage
 
 ### API /api/checkout
+
+Customer try to checkout cart using a card selected by index, in response the System will reply *201 Created* if payment is successful else it will reply *400 Bad Request* showing error information to customer.
 
 ![Checkout REST](./images/API/checkout.png)
 
@@ -138,12 +158,15 @@ This endpoint permit different methods for different actions.
 
 ![Order REST](./images/API/order.png)
 
-
 #### GET
+
+Customer can get its entire order list if id parameter is not specified else it can get informations for a specific order identified by id
 
 ![](./images/API/order_get.png)
 
 #### POST
+
+Dispatcher can update order status specifing order id.
 
 ![](./images/API/order_post.png)
 
@@ -153,11 +176,14 @@ This endpoint permit different methods for different actions.
 
 ![Order Shipping REST](./images/API/order_ship.png)
 
-
 #### GET
+
+Customer can get list of shipping information associated to orderid required parameter.
 
 ![](./images/API/order_ship_get.png)
 
 #### POST
+
+Customer can update list of shipping information associated to orderid required parameter.
 
 ![](./images/API/order_ship_post.png)
