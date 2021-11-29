@@ -187,3 +187,6 @@ Customer can get list of shipping information associated to orderid required par
 Customer can update list of shipping information associated to orderid required parameter.
 
 ![](./images/API/order_ship_post.png)
+
+\newpage
+
