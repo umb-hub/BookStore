@@ -140,3 +140,5 @@ As shown software architecture is defined by:
 - Front End Server: implements presentation layer using Nodejs enviroment and React Framework
 - Back End Server: implements API Interface (discussed in next chapter) and business layer using Nodejs enviroment and Express Middleware.
 - SQL Server: implements Data Access Layer using a MySQL server.
+
+\newpage
